@@ -9,49 +9,52 @@ import ItemMenu from "./Components/EventMenu";
 import Verify from "./Components/Verify";
 import MyOrder from "./Components/MyOrder";
 import ItemOutlet from "./Components/EventOutlet";
-
-const appRouter = createBrowserRouter([
-  {
-    path: "/",
-    element: <Layout />,
-    children: [
-      {
-        path: "/",
-        element: <Home />,
-      },
-      {
-        path: "/cart",
-        element: <Cart />,
-      },
-      {
-        path: "/placeOrder",
-        element: <PlaceOrder />,
-      },
-      {
-        path: "/contact-us",
-        element: <ContactUs />,
-      },
-      {
-        path: "/food-menu",
-        element: <ItemOutlet />,
-      },
-      {
-        path: "/payment",
-        element: <PlaceOrder />,
-      },
-      {
-        path: "/verify",
-        element: <Verify />,
-      },
-      {
-        path: "/myorders",
-        element: <MyOrder />,
-      },
-    ],
-  },
-]);
+import { useSelector } from "react-redux";
 
 function App() {
+  const eventsData = useSelector((store) => store.categorySlice.productAdded);
+// console.log(eventsData);
+  const appRouter = createBrowserRouter([
+    {
+      path: "/",
+      element: <Layout />,
+      children: [
+        {
+          path: "/",
+          element: <Home />,
+        },
+        {
+          path: "/cart",
+          element: <Cart />,
+        },
+        {
+          path: "/placeOrder",
+          element: <PlaceOrder />,
+        },
+        {
+          path: "/contact-us",
+          element: <ContactUs />,
+        },
+        {
+          path: "/food-menu",
+          element: <ItemOutlet />,
+        },
+        {
+          path: "/payment",
+          element: <PlaceOrder />,
+        },
+        {
+          path: "/verify",
+          element: <Verify eventsData={eventsData} />, // Pass as a prop here
+        },
+        {
+          path: "/myorders",
+          element: <MyOrder />,
+        },
+      ],
+    },
+  ]);
+
   return (
     <>
       <div>
