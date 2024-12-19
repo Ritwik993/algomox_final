@@ -14,10 +14,8 @@ const corsOptions = {
   origin: [
     "http://localhost:5174",
     "http://localhost:5173",
-    "https://food-order12.vercel.app",
-    "https://food-order-admin-two.vercel.app",
-    "https://food-order12-git-main-sachin-bhagats-projects.vercel.app",
-    "https://food-order12-sachin-bhagats-projects.vercel.app",
+    "https://algomox-final-s71h.vercel.app",
+    "https://algomox-final-svdz.vercel.app/",
   ],
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   preflightContinue: false,
@@ -47,12 +45,12 @@ app.use(
 );
 
 //import all the routes here
-const FoodList = require("./Routes/eventList");
+const EventList = require("./Routes/eventList");
 const userRouter = require("./Routes/userRoute");
 const CartRouter = require("./Routes/CartRoute");
 const OrderRouter = require("./Routes/OrderRoute");
 //router for middleware
-app.use("/api/v1", FoodList);
+app.use("/api/v1", EventList);
 app.use("/api/v1", userRouter);
 app.use("/api/v1", CartRouter);
 app.use("/api/v1", OrderRouter);

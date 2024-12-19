@@ -7,7 +7,8 @@ const initialState = {
   token: "",
   showLogin: false,
   totProduct: 0,
-  url: "http://localhost:4000/api/v1",
+  // url: "http://localhost:4000/api/v1",
+  url:"https://algomox-final.vercel.app/api/v1",
   eventlist: [],
   fetchdata: [],
   TotalProductAdded: 0,
@@ -32,7 +33,7 @@ const decreaseCartData = async (id, name, quantity, price, token) => {
     quantity,
     price,
   };
-  await axios.post("http://localhost:4000/api/v1/remove", data, {
+  await axios.post("https://algomox-final.vercel.app/api/v1/remove", data, {
     headers: { token },
   });
 };
