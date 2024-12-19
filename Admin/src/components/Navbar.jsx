@@ -7,7 +7,7 @@ const Navbar = () => {
       <div className="flex justify-between items-center py-4">
         <div className="flex items-center">
           <div>
-            <img className="h-10 sm:h-16" src={assets.logo} alt="Logo" />
+            <img className="h-10 sm:h-16" src="https://img.freepik.com/premium-vector/event-management-logo_105514-2.jpg" alt="Logo" />
             <h2 className="ml-2 text-lg sm:text-xl font-semibold ">
               Admin Panel
             </h2>

@@ -39,15 +39,15 @@ const ContactUs = () => {
         </form>
         <div className="mt-8 text-center">
           <p className="text-gray-700">
-            <strong>Phone:</strong> +919509152990
+            <strong>Phone:</strong> +918653465655
           </p>
           <p className="text-gray-700">
             <strong>Email:</strong>{" "}
             <a
-              href="mailto:contactbhagatsachin@gmail.com"
+              href="mailto:contactbhagatritwik@gmail.com"
               className="text-green-500 hover:underline"
             >
-              contactbhagatsachin@gmail.com
+              contactbhagatritwik@gmail.com
             </a>
           </p>
         </div>

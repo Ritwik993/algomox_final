@@ -7,7 +7,7 @@ const AddItem = ({url}) => {
   const [data, setData] = useState({
     name: "",
     description: "",
-    category: "Salad",
+    category: "Hackathon",
     price: "",
   });
   const onChangeHandler = (event) => {
@@ -32,9 +32,9 @@ const AddItem = ({url}) => {
       );
       console.log(response)
     if(response.data.sucess) {
-      setData({ name: "", description: "", category: "Salad", price: "" });
+      setData({ name: "", description: "", category: "Hackathon", price: "" });
       setImage(null);
-      toast.success("Item Added");
+      toast.success("Event Added");
     } else {
       toast.error("Error");
     }
@@ -86,7 +86,7 @@ const AddItem = ({url}) => {
         <div className="flex flex-col md:flex-row md:items-center md:gap-4">
           <div className="flex flex-col mb-4 md:mb-0">
             <label htmlFor="category" className="mb-2 font-medium">
-              Product Category
+              Events Category
             </label>
             <select
               name="category"
@@ -94,14 +94,7 @@ const AddItem = ({url}) => {
               className="border-2 border-slate-500 p-2 rounded-md "
               onChange={onChangeHandler}
             >
-              <option value="Salad">Salad</option>
-              <option value="Rolls">Rolls</option>
-              <option value="Pure Veg">Pure Veg</option>
-              <option value="Deserts">Deserts</option>
-              <option value="Cake">Cake</option>
-              <option value="Pasta">Pasta</option>
-              <option value="Noodles">Noodles</option>
-              <option value="Sandwich">Sandwich</option>
+              <option value="Hackathon">Hackathon</option>
             </select>
           </div>
           <div className="flex flex-col">

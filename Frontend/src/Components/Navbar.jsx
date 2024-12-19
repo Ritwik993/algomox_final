@@ -48,9 +48,10 @@ const Navbar = () => {
       <nav className="bg-white shadow-md">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <img
-            className="h-16 md:h-20"
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Bolt_Food_logo.png/799px-Bolt_Food_logo.png?20230209130621"
-            alt="Food_logo"
+            className="h-20 w-20 md:h-35 md:w-35 object-cover"
+            src="https://img.freepik.com/premium-vector/event-management-logo_105514-2.jpg"
+            alt="event_logo"
+
           />
           <div className="hidden md:flex gap-8 items-center text-lg">
             <NavLink
@@ -71,7 +72,7 @@ const Navbar = () => {
                   : "text-black cursor-pointer hover:text-green-500 transition duration-300"
               }
             >
-              Menu
+              Events
             </NavLink>
             <NavLink
               to="/contact-us"
@@ -84,13 +85,24 @@ const Navbar = () => {
               Contact Us
             </NavLink>
           </div>
+        
           <div className="flex gap-6 items-center">
-            <img
+         
+            {/* <img
               className="h-7 cursor-pointer"
               src={assets.search_icon}
               alt="Search"
-            />
+            /> */}
+            
             <div className="relative">
+              <div className="flex gap-4 items-center justify-center">
+              
+              <button
+              onClick={()=>{window.location.href = "http://localhost:5174"}}
+                className="h-10 rounded-lg shadow-lg bg-blue-500 text-white py-2 px-4 hover:bg-blue-600 transition duration-300 ease-in-out transform hover:scale-105 border border-blue-700 text-md font-bold"
+              >
+                create Event
+              </button>
               <Link to="/cart">
                 <img
                   className="h-7 cursor-pointer"
@@ -98,6 +110,11 @@ const Navbar = () => {
                   alt="Basket"
                 />
               </Link>
+              </div>
+              
+
+              
+              
               {TotalProductAdded > 0 ? (
                 <div className="absolute flex items-center justify-center min-w-[20px] min-h-[20px] bg-green-500 text-white font-bold rounded-full top-[-8px] right-[-8px]">
                   {TotalProductAdded}

@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import ExploreMenu from "./ExploreMenu";
+// import ExploreMenu from "./ExploreMenu";
 import FoodMenu from "./FoodMenu";
 import { useDispatch } from "react-redux";
 import { setCategory } from "../utils/CategorySlice";
@@ -13,7 +13,7 @@ const FoodOutlet = () => {
 
   return (
     <div>
-      <ExploreMenu />
+      {/* <ExploreMenu /> */}
       <FoodMenu />
     </div>
   );

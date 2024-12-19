@@ -15,7 +15,7 @@ const FoodMenu = () => {
   const url = useSelector((state) => state.categorySlice.url);
   const token = useSelector((state) => state.categorySlice.token);
   const foodlist = useSelector((state) => state.categorySlice.foodlist);
-  //const [productAdded, setProductAdded] = useState([]);
+  // const [productAdded, setProductAdded] = useState([]);
   const productAdded = useSelector((state) => state.categorySlice.productAdded);
   useEffect(() => {
     const fetchCartData = async () => {
@@ -57,12 +57,12 @@ const FoodMenu = () => {
   return (
     <div className="p-4 sm:p-8 md:p-12">
       <h1 className="text-2xl font-bold mb-6 text-center">
-        Top dishes near you
+        Events near you
       </h1>
       <div className="flex flex-wrap gap-6 justify-center">
         {foodlist
-          .filter((item) => category === "all" || item.category === category)
-          .map((item, index) => (
+          ?.filter((item) => category === "all" || item.category === category)
+          ?.map((item, index) => (
             <div
               key={index}
               className="w-full sm:w-[300px] p-4 rounded-lg shadow-lg border border-gray-200 cursor-pointer hover:shadow-xl transition-shadow"

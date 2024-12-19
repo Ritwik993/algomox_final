@@ -5,7 +5,13 @@ const Footer = () => {
   return (
     <div className="bg-slate-600 text-white">
       <div className="flex justify-center py-6">
-        <img className="h-[100px]" src={assets.logo} alt="Logo" />
+        {/* <img className="h-[100px]" src={assets.logo} alt="Logo" /> */}
+        <img
+            className="h-20 w-20 md:h-[100px] md:w-[100px] object-cover"
+            src="https://img.freepik.com/premium-vector/event-management-logo_105514-2.jpg"
+            alt="event_logo"
+
+          />
       </div>
       <div className="p-5 md:flex md:justify-around">
         <p className="mb-6 md:mb-0 md:w-1/2">
@@ -21,15 +27,15 @@ const Footer = () => {
           <ul>
             <li className="mb-1">Home</li>
             <li className="mb-1">About us</li>
-            <li className="mb-1">Delivery</li>
+            <li className="mb-1">Events</li>
             <li className="mb-1">Privacy policy</li>
           </ul>
         </div>
         <div>
           <h1 className="font-bold mb-2">GET IN TOUCH</h1>
           <ul>
-            <li className="mb-1">+919509152990</li>
-            <li className="mb-1">contactbhagatsachin@gmail.com</li>
+            <li className="mb-1">+918653465655</li>
+            <li className="mb-1">contactbhagatritwik@gmail.com</li>
           </ul>
         </div>
       </div>
@@ -39,7 +45,7 @@ const Footer = () => {
         <img src={assets.twitter_icon} alt="Twitter" className="h-6 w-6" />
       </div>
       <div className="text-center py-4 border-t border-gray-400">
-        <p>© {new Date().getFullYear()} Sachin Bhagat. All rights reserved.</p>
+        <p>© {new Date().getFullYear()} Ritwik Bhagat. All rights reserved.</p>
       </div>
     </div>
   );
