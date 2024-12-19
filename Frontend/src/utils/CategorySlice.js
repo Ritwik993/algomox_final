@@ -21,7 +21,7 @@ const addCartData = async (id, name, quantity, price, token) => {
     quantity,
     price,
   };
-  await axios.post("http://localhost:4000/api/v1/add", data, {
+  await axios.post("https://algomox-final.vercel.app/api/v1/add", data, {
     headers: { token },
   });
 };
