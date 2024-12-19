@@ -34,7 +34,7 @@ const ItemMenu = () => {
     if (token) {
       fetchCartData();
     }
-  }, [token, url,dispatch]);
+  }, [token, url, dispatch]);
 
   useEffect(() => {
     const fetchEventList = async () => {
@@ -63,7 +63,7 @@ const ItemMenu = () => {
         {eventlist
           ?.filter((item) => category === "all" || item.category === category)
           ?.map((item, index) => (
-            <div
+            item.ticket && (<div
               key={index}
               className="w-full sm:w-[300px] p-4 rounded-lg shadow-lg border border-gray-200 cursor-pointer hover:shadow-xl transition-shadow"
             >
@@ -73,52 +73,63 @@ const ItemMenu = () => {
                   src={item.image.secure_url}
                   alt={item.name}
                 />
-                <div className="flex gap-4 rounded-xl text-[25px]">
-                  <img
-                    onClick={() =>
-                      dispatch(
-                        addProduct({
-                          id: item._id,
-                          name: item.name,
-                          price: item.price,
-                          quantity: getQuantity(item._id),
-                        })
-                      )
-                    }
-                    src={assets.add_icon_green}
-                    alt="Add"
-                  />
-                  {getQuantity(item._id)}
-                  <img
-                    onClick={() =>
-                      dispatch(
-                        decreaseProduct({
-                          id: item._id,
-                          name: item.name,
-                          price: item.price,
-                          quantity: getQuantity(item._id),
-                        })
-                      )
-                    }
-                    src={assets.remove_icon_red}
-                    alt="Remove"
-                  />
+                <div className="flex justify-between items-center">
+                  <div className="flex gap-4 rounded-xl text-[25px]">
+                    <img
+                      onClick={() =>
+                        dispatch(
+                          addProduct({
+                            id: item._id,
+                            name: item.name,
+                            price: item.price,
+                            quantity: getQuantity(item._id),
+                          })
+                        )
+                      }
+                      src={assets.add_icon_green}
+                      alt="Add"
+                    />
+                    {getQuantity(item._id)}
+                    <img
+                      onClick={() =>
+                        dispatch(
+                          decreaseProduct({
+                            id: item._id,
+                            name: item.name,
+                            price: item.price,
+                            quantity: getQuantity(item._id),
+                          })
+                        )
+                      }
+                      src={assets.remove_icon_red}
+                      alt="Remove"
+                    />
+                  </div>
+                  <p className="text-xl  text-blue-500">{item.ticket} tickets</p>
+
                 </div>
+
+
               </div>
 
               <div className="flex justify-between items-center mb-2">
                 <p className="text-lg font-semibold">{item.name}</p>
-                <img
+                {/* <img
                   src={assets.rating_starts}
                   alt="Rating stars"
                   className="w-16"
-                />
+                /> */}
+                <p className="text-xl  text-black-500">{item.date}</p>
               </div>
               <p className="text-gray-600 mb-4">{item.description}</p>
+              <div className="flex justify-between items-center">
               <div className="text-xl font-bold text-green-500">
                 ${item.price}
               </div>
-            </div>
+              <p className="text-xl  text-blue-500">{item.location}</p>
+              
+              </div>
+            </div>)
           ))}
       </div>
     </div>

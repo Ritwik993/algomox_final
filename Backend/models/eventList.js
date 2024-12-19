@@ -26,6 +26,16 @@ const eventListSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  ticket:{
+    type: Number
+  },
+  date: {
+    type: String
+  },
+  location:{
+    type: String,
+
+  },
   quantity: {
     type: Number,
     default: 0,

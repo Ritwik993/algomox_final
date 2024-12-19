@@ -71,7 +71,7 @@ const MyOrder = () => {
                   onClick={fetchOrders}
                   className="bg-green-500 text-white py-2 px-4 rounded-lg hover:bg-green-600 transition duration-300"
                 >
-                  Track your Events
+                  Success
                 </button>
               </div>
             );

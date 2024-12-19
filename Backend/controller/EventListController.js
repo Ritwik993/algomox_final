@@ -8,7 +8,7 @@ exports.addProduct = async (req, res, next) => {
       return next(Error("images are required", 401));
     }
     const photo = req.files.image;
-    const { name, description, price, category } = req.body;
+    const { name, description, price, category ,ticket,date,location} = req.body;
     const result = await cloudinary.uploader.upload(photo.tempFilePath, {
       folder: "FoodAppProducts",
     });
@@ -21,6 +21,9 @@ exports.addProduct = async (req, res, next) => {
         secure_url: result.secure_url,
       },
       category,
+      ticket,
+      date,
+      location,
     };
     const data = await eventlist.create(prod);
     res.status(200).send({
