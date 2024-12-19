@@ -9,7 +9,7 @@ import {
 } from "../utils/CategorySlice";
 import axios from "axios";
 
-const FoodMenu = () => {
+const ItemMenu = () => {
   const category = useSelector((state) => state.categorySlice.category);
   const dispatch = useDispatch();
   const url = useSelector((state) => state.categorySlice.url);
@@ -125,4 +125,4 @@ const FoodMenu = () => {
   );
 };
 
-export default FoodMenu;
+export default ItemMenu;

@@ -47,7 +47,7 @@ const Orders = ({ url }) => {
 
   return (
     <div className="container mx-auto p-4">
-      <h3 className="text-2xl font-bold mb-4">Order Page</h3>
+      <h3 className="text-2xl font-bold mb-4">Booked Events</h3>
       {orders.map((order) =>
         order.payment ? ( // Conditionally render only if payment is successful
           <div key={order._id} className="bg-white rounded shadow-md mb-4 p-4">

@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
-const PlaceOrder = () => {
+const PlaceEvent = () => {
   const foodlist = useSelector((state) => state.categorySlice.foodlist);
   const productAdded = useSelector((state) => state.categorySlice.productAdded);
   const url = useSelector((state) => state.categorySlice.url);
@@ -60,12 +60,13 @@ const PlaceOrder = () => {
 
       if (response.data.success) {
         const { session_url } = response.data;
+        // console.log(response.data);
         window.location.replace(session_url);
       } else {
-        alert("Error placing order");
+        alert("Error booking events");
       }
     } catch (error) {
-      console.error("Error placing order:", error);
+      console.error("Error booking eventd:", error);
       alert("Error placing order");
     }
   };
@@ -177,14 +178,14 @@ const PlaceOrder = () => {
               type="submit"
               className="w-full py-2 bg-green-500 text-white rounded-lg font-semibold hover:bg-green-600 transition-colors"
             >
-              Place Order
+                Book your events
             </button>
           </form>
         </div>
         {/* Order Summary */}
         <div className="lg:w-1/2">
           <div className="p-4 bg-white shadow-md rounded-lg">
-            <h1 className="text-2xl font-bold mb-4">Order Summary</h1>
+            <h1 className="text-2xl font-bold mb-4">Event Summary</h1>
             {/* Display each item in the order */}
             {productAdded.map((item, index) => {
               const foodItem = foodlist.find((food) => food._id === item.id);
@@ -237,4 +238,4 @@ const PlaceOrder = () => {
   );
 };
 
-export default PlaceOrder;
+export default PlaceEvent;

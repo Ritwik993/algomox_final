@@ -1,22 +1,22 @@
 import React, { useEffect } from "react";
 // import ExploreMenu from "./ExploreMenu";
-import FoodMenu from "./FoodMenu";
+import ItemMenu from "./EventMenu";
 import { useDispatch } from "react-redux";
 import { setCategory } from "../utils/CategorySlice";
 
-const FoodOutlet = () => {
+const ItemOutlet = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(setCategory("all"));
+    dispatch(setCategory("hackathon"));
   }, [dispatch]);
 
   return (
     <div>
       {/* <ExploreMenu /> */}
-      <FoodMenu />
+      <ItemMenu />
     </div>
   );
 };
 
-export default FoodOutlet;
+export default ItemOutlet;

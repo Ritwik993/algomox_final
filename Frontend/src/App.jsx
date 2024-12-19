@@ -2,13 +2,13 @@ import "./App.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Layout from "./Components/Layout";
 import Cart from "./pages/Cart/Cart";
-import PlaceOrder from "./pages/PlaceOrder/PlaceOrder";
+import PlaceOrder from "./pages/PlaceEvent/PlaceEvent";
 import Home from "./pages/Home/Home";
 import ContactUs from "./Components/ContactUs";
-import FoodMenu from "./Components/FoodMenu";
-import FoodOutlet from "./Components/FoodOutlet";
+import ItemMenu from "./Components/EventMenu";
 import Verify from "./Components/Verify";
 import MyOrder from "./Components/MyOrder";
+import ItemOutlet from "./Components/EventOutlet";
 
 const appRouter = createBrowserRouter([
   {
@@ -33,7 +33,7 @@ const appRouter = createBrowserRouter([
       },
       {
         path: "/food-menu",
-        element: <FoodOutlet />,
+        element: <ItemOutlet />,
       },
       {
         path: "/payment",

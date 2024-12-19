@@ -114,13 +114,13 @@ const Cart = () => {
       <div className="flex flex-col lg:flex-row justify-between">
         <div className="mt-12 py-10 lg:mt-0 lg:w-1/2 lg:pl-4">
           <div className="p-4 bg-white shadow-md rounded-lg">
-            <h1 className="text-2xl font-bold mb-4">Cart Totals</h1>
+            <h1 className="text-2xl font-bold mb-4">Payment Details</h1>
             <div className="flex flex-col md:flex-row justify-between py-2 border-b">
               <div className="text-gray-700">Subtotal</div>
               <div className="text-gray-700">${total.toFixed(2)}</div>
             </div>
             <div className="flex flex-col md:flex-row justify-between py-2 border-b">
-              <div className="text-gray-700">Delivery Fee</div>
+              <div className="text-gray-700">Processing Fee</div>
               <div className="text-gray-700">
                 {total > 0 ? "$2.00" : "0.00"}
               </div>

@@ -138,11 +138,11 @@ const Navbar = () => {
                       className="flex items-center px-4 py-2 cursor-pointer hover:bg-gray-100"
                     >
                       <img
-                        src={assets.bag_icon}
+                        src="https://t3.ftcdn.net/jpg/05/12/79/86/360_F_512798614_wolbwuaalLg8YOKjoalvvebzKRuwIvqq.jpg"
                         alt="Orders"
-                        className="h-6 mr-2"
+                        className="h-[20px] mr-2"
                       />
-                      <span>Orders</span>
+                      <span>My Events</span>
                     </li>
                     <li
                       onClick={logout}

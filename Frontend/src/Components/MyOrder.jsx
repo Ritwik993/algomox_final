@@ -28,7 +28,7 @@ const MyOrder = () => {
 
   return (
     <div className="p-4 md:p-8">
-      <h1 className="text-2xl font-bold mb-4">My Orders</h1>
+      <h1 className="text-2xl font-bold mb-4">My Events</h1>
       <img
         className="w-16 h-16 mb-4"
         src={assets.parcel_icon}
@@ -44,20 +44,20 @@ const MyOrder = () => {
                 className="p-4 border rounded-lg shadow-md bg-white"
               >
                 <h2 className="text-lg font-semibold mb-2">
-                  Order #{orderIndex + 1}
+                  Event #{orderIndex + 1}
                 </h2>
                 <p className="mb-2">
                   <span className="font-bold">Amount: </span>₹
                   {order.amount / 100}
                 </p>
                 <p className="mb-2">
-                  <span className="font-bold">Items: </span>
+                  <span className="font-bold">Total Members: </span>
                   {order.items.length}
                 </p>
-                <p className="mb-4">
+                {/* <p className="mb-4">
                   <span className="font-bold">Status: </span>
                   {order.status}
-                </p>
+                </p> */}
                 <div className="mb-4">
                   <span className="font-bold">Details: </span>
                   {order.items.map((item, itemIndex) => (
@@ -71,7 +71,7 @@ const MyOrder = () => {
                   onClick={fetchOrders}
                   className="bg-green-500 text-white py-2 px-4 rounded-lg hover:bg-green-600 transition duration-300"
                 >
-                  Track Order
+                  Track your Events
                 </button>
               </div>
             );
