@@ -8,9 +8,12 @@ import {
   setLogin,
   setToken,
 } from "../utils/CategorySlice";
+import { isAdmin } from "../utils/userSlice";
+
 
 const Navbar = () => {
   const show = useSelector((state) => state.categorySlice.showLogin);
+  const isAdminvalue = useSelector((store) => store.user?.admin);
   const dispatch = useDispatch();
   const TotalProductAdded = useSelector(
     (state) => state.categorySlice.TotalProductAdded
@@ -31,6 +34,7 @@ const Navbar = () => {
   const logout = () => {
     localStorage.removeItem("token");
     dispatch(setToken(""));
+    dispatch(isAdmin(false));
     navigate("/");
   };
 
@@ -85,36 +89,36 @@ const Navbar = () => {
               Contact Us
             </NavLink>
           </div>
-        
+
           <div className="flex gap-6 items-center">
-         
+
             {/* <img
               className="h-7 cursor-pointer"
               src={assets.search_icon}
               alt="Search"
             /> */}
-            
+
             <div className="relative">
               <div className="flex gap-4 items-center justify-center">
-              
-              <button
-              onClick={()=>{window.location.href = "http://localhost:5174"}}
-                className="h-10 rounded-lg shadow-lg bg-blue-500 text-white py-2 px-4 hover:bg-blue-600 transition duration-300 ease-in-out transform hover:scale-105 border border-blue-700 text-md font-bold"
-              >
-                create Event
-              </button>
-              <Link to="/cart">
-                <img
-                  className="h-7 cursor-pointer"
-                  src={assets.basket_icon}
-                  alt="Basket"
-                />
-              </Link>
-              </div>
-              
 
-              
-              
+                {isAdminvalue && (<button
+                  onClick={() => { window.location.href = "http://localhost:5174" }}
+                  className="h-10 rounded-lg shadow-lg bg-blue-500 text-white py-2 px-4 hover:bg-blue-600 transition duration-300 ease-in-out transform hover:scale-105 border border-blue-700 text-md font-bold"
+                >
+                  create Event
+                </button>)}
+                <Link to="/cart">
+                  <img
+                    className="h-7 cursor-pointer"
+                    src={assets.basket_icon}
+                    alt="Basket"
+                  />
+                </Link>
+              </div>
+
+
+
+
               {TotalProductAdded > 0 ? (
                 <div className="absolute flex items-center justify-center min-w-[20px] min-h-[20px] bg-green-500 text-white font-bold rounded-full top-[-8px] right-[-8px]">
                   {TotalProductAdded}

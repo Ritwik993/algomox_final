@@ -3,6 +3,7 @@ import { assets } from "../Food Del Frontend Assets/assets/assets";
 import { useDispatch, useSelector } from "react-redux";
 import { setLogin, setToken } from "../utils/CategorySlice";
 import axios from "axios";
+import { isAdmin } from "../utils/userSlice";
 
 const LoginPopUp = () => {
   const dispatch = useDispatch();
@@ -25,6 +26,7 @@ const LoginPopUp = () => {
     setData({ ...data, [name]: value });
   };
 
+ 
   const onLogin = async (e) => {
     e.preventDefault();
     let link = url;
@@ -36,9 +38,10 @@ const LoginPopUp = () => {
     console.log(link);
     const response = await axios.post(link, data);
     if (response.data.success) {
-      
+      console.log(response.data);
       dispatch(setToken(response.data.token));
       localStorage.setItem("token", response.data.token);
+      dispatch(isAdmin(response.data.user.isAdmin));
       dispatch(setLogin());
     } else {
       alert(response.data.message);

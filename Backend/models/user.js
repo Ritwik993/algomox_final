@@ -20,6 +20,14 @@ const userSchema = new mongoose.Schema(
       minLength: [6, "password should be atleast 6 char"],
       select: false,
     },
+    isAdmin:{
+      type: Boolean,
+      default:false
+    },
+    isOrganizer:{
+      type: Boolean,
+      default: false
+    },
     cartData: [],
     createdAt: {
       type: String,

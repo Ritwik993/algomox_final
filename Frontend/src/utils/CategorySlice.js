@@ -133,6 +133,8 @@ const categorySlice = createSlice({
   },
 });
 
+
+
 export const {
   setCategory,
   addProduct,
