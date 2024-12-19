@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const PlaceEvent = () => {
-  const foodlist = useSelector((state) => state.categorySlice.foodlist);
+  const eventlist = useSelector((state) => state.categorySlice.eventlist);
   const productAdded = useSelector((state) => state.categorySlice.productAdded);
   const url = useSelector((state) => state.categorySlice.url);
   const token = useSelector((state) => state.categorySlice.token);
@@ -22,13 +22,13 @@ const PlaceEvent = () => {
   useEffect(() => {
     let sum = 0;
     productAdded.forEach((item) => {
-      const foodItem = foodlist.find((food) => food._id === item.id);
-      if (foodItem) {
-        sum += foodItem.price * item.quantity;
+      const eventItem = eventlist.find((it) => it._id === item.id);
+      if (eventItem) {
+        sum += eventItem.price * item.quantity;
       }
     });
     setTotal(sum);
-  }, [productAdded, foodlist]);
+  }, [productAdded, eventlist]);
 
   const navigate = useNavigate();
 
@@ -188,8 +188,8 @@ const PlaceEvent = () => {
             <h1 className="text-2xl font-bold mb-4">Event Summary</h1>
             {/* Display each item in the order */}
             {productAdded.map((item, index) => {
-              const foodItem = foodlist.find((food) => food._id === item.id);
-              if (foodItem) {
+              const eventItem = eventlist.find((food) => food._id === item.id);
+              if (eventItem) {
                 return (
                   <div
                     key={index}
@@ -197,17 +197,17 @@ const PlaceEvent = () => {
                   >
                     <img
                       className="h-16 w-16 md:h-20 md:w-20 object-cover rounded-lg"
-                      src={foodItem.image.secure_url}
-                      alt={foodItem.name}
+                      src={eventItem.image.secure_url}
+                      alt={eventItem.name}
                     />
                     <div className="md:w-1/4 text-center md:text-left text-gray-700 mt-2 md:mt-0">
-                      {foodItem.name}
+                      {eventItem.name}
                     </div>
                     <div className="md:w-1/4 text-center md:text-left text-gray-700 mt-2 md:mt-0">
-                      ${foodItem.price.toFixed(2)} x {item.quantity}
+                      ${eventItem.price.toFixed(2)} x {item.quantity}
                     </div>
                     <div className="md:w-1/4 text-center md:text-left text-gray-700 mt-2 md:mt-0">
-                      ${(foodItem.price * item.quantity).toFixed(2)}
+                      ${(eventItem.price * item.quantity).toFixed(2)}
                     </div>
                   </div>
                 );

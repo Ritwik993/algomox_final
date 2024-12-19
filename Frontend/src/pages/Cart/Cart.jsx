@@ -12,7 +12,7 @@ import {
 const Cart = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const foodlist = useSelector((state) => state.categorySlice.foodlist);
+  const eventlist = useSelector((state) => state.categorySlice.eventlist);
   const token = useSelector((state) => state.categorySlice.token);
   const url = useSelector((state) => state.categorySlice.url);
   let total = 0;
@@ -54,9 +54,9 @@ const Cart = () => {
           <li className="w-1/6 ">Remove</li>
         </ul>
         {productAdded.map((item, index) => {
-          const foodItem = foodlist.find((food) => food._id === item.id);
-          if (foodItem) {
-            total += foodItem.price * item.quantity;
+          const eventItem = eventlist.find((it) => it._id === item.id);
+          if (eventItem) {
+            total += eventItem.price * item.quantity;
             return (
               <div
                 key={index}
@@ -66,31 +66,31 @@ const Cart = () => {
                   <li className="md:w-1/6 text-center md:text-left mb-4 md:mb-0">
                     <img
                       className="h-16 w-16 md:h-20 md:w-20 object-cover mx-auto md:mx-0 rounded-lg"
-                      src={foodItem.image.secure_url}
-                      alt={foodItem.name}
+                      src={eventItem.image.secure_url}
+                      alt={eventItem.name}
                     />
                   </li>
                   <li className="md:w-1/6 flex items-center justify-center md:justify-start text-gray-800">
-                    {foodItem.name}
+                    {eventItem.name}
                   </li>
                   <li className="md:w-1/6 flex items-center justify-center md:justify-start text-gray-800">
-                    ${foodItem.price.toFixed(2)}
+                    ${eventItem.price.toFixed(2)}
                   </li>
                   <li className="md:w-1/6 flex items-center justify-center md:justify-start text-gray-800">
                     {item.quantity}
                   </li>
                   <li className="md:w-1/6 flex items-center justify-center md:justify-start text-gray-800">
-                    ${(foodItem.price * item.quantity).toFixed(2)}
+                    ${(eventItem.price * item.quantity).toFixed(2)}
                   </li>
                   <li className="md:w-1/6 flex items-center justify-center md:justify-start">
                     <button
                       onClick={() =>
                         dispatch(
                           decreaseProduct({
-                            id: foodItem._id,
-                            name: foodItem.name,
-                            price: foodItem.price,
-                            quantity: getQuantity(foodItem._id),
+                            id: eventItem._id,
+                            name: eventItem.name,
+                            price:eventItem.price,
+                            quantity: getQuantity(eventItem._id),
                           })
                         )
                       }

@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   addProduct,
   decreaseProduct,
-  setFoodlist,
+  setEventlist,
   setProductAdded,
 } from "../utils/CategorySlice";
 import axios from "axios";
@@ -14,7 +14,7 @@ const ItemMenu = () => {
   const dispatch = useDispatch();
   const url = useSelector((state) => state.categorySlice.url);
   const token = useSelector((state) => state.categorySlice.token);
-  const foodlist = useSelector((state) => state.categorySlice.foodlist);
+  const eventlist = useSelector((state) => state.categorySlice.eventlist);
   // const [productAdded, setProductAdded] = useState([]);
   const productAdded = useSelector((state) => state.categorySlice.productAdded);
   useEffect(() => {
@@ -37,16 +37,16 @@ const ItemMenu = () => {
   }, [token, url,dispatch]);
 
   useEffect(() => {
-    const fetchFoodList = async () => {
+    const fetchEventList = async () => {
       try {
         const response = await axios.get(`${url}/admin/getAllProduct`);
-        dispatch(setFoodlist(response.data.data));
+        dispatch(setEventlist(response.data.data));
       } catch (error) {
         console.error("Error fetching food list:", error);
       }
     };
 
-    fetchFoodList();
+    fetchEventList();
   }, [dispatch, url]);
 
   const getQuantity = (id) => {
@@ -60,7 +60,7 @@ const ItemMenu = () => {
         Events near you
       </h1>
       <div className="flex flex-wrap gap-6 justify-center">
-        {foodlist
+        {eventlist
           ?.filter((item) => category === "all" || item.category === category)
           ?.map((item, index) => (
             <div

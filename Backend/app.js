@@ -47,7 +47,7 @@ app.use(
 );
 
 //import all the routes here
-const FoodList = require("./Routes/FoodList");
+const FoodList = require("./Routes/eventList");
 const userRouter = require("./Routes/userRoute");
 const CartRouter = require("./Routes/CartRoute");
 const OrderRouter = require("./Routes/OrderRoute");

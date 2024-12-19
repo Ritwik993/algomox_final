@@ -1,5 +1,6 @@
 const cloudinary = require("cloudinary").v2;
-const FoodList = require("../models/foodList");
+// const FoodList = require("../models/List");
+const eventlist=require("../models/eventList")
 
 exports.addProduct = async (req, res, next) => {
   try {
@@ -21,7 +22,7 @@ exports.addProduct = async (req, res, next) => {
       },
       category,
     };
-    const data = await FoodList.create(prod);
+    const data = await eventlist.create(prod);
     res.status(200).send({
       sucess: true,
       prod,
@@ -34,13 +35,13 @@ exports.addProduct = async (req, res, next) => {
 
 exports.adminDeleteOneProduct = async (req, res, next) => {
   try {
-    let product = await FoodList.findById(req.params.id);
+    let product = await eventlist.findById(req.params.id);
 
     if (!product) {
       return next(Error("Product not found"));
     }
     await cloudinary.uploader.destroy(product.image.id);
-    await FoodList.findByIdAndDelete(req.params.id);
+    await eventlist.findByIdAndDelete(req.params.id);
     res.status(200).json({
       success: true,
       message: "Product deleted !",
@@ -53,7 +54,7 @@ exports.adminDeleteOneProduct = async (req, res, next) => {
 
 exports.getAllProduct = async (req, res, next) => {
     try {
-        const product = await FoodList.find({});
+        const product = await eventlist.find({});
         res.send({
             success: true,
             data:product

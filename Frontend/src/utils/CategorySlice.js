@@ -8,7 +8,7 @@ const initialState = {
   showLogin: false,
   totProduct: 0,
   url: "http://localhost:4000/api/v1",
-  foodlist: [],
+  eventlist: [],
   fetchdata: [],
   TotalProductAdded: 0,
 };
@@ -114,8 +114,8 @@ const categorySlice = createSlice({
     setToken: (state, action) => {
       state.token = action.payload;
     },
-    setFoodlist: (state, action) => {
-      state.foodlist = action.payload;
+    setEventlist: (state, action) => {
+      state.eventlist = action.payload;
     },
     setProductAdded: (state, action) => {
       state.productAdded = action.payload;
@@ -140,7 +140,7 @@ export const {
   setLogin,
   removeProduct,
   setToken,
-  setFoodlist,
+  setEventlist,
   setProductAdded,
   getTotalProductAdded,
 } = categorySlice.actions;

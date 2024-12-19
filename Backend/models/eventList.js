@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const foodListSchema = new mongoose.Schema({
+const eventListSchema = new mongoose.Schema({
   name: {
     type: String,
     required: true,
@@ -31,4 +31,4 @@ const foodListSchema = new mongoose.Schema({
     default: 0,
   },
 });
-module.exports = mongoose.model("FoodList", foodListSchema);
+module.exports = mongoose.model("eventlist", eventListSchema);

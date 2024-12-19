@@ -8,7 +8,7 @@ const ItemOutlet = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(setCategory("hackathon"));
+    dispatch(setCategory("Hackathon"));
   }, [dispatch]);
 
   return (
