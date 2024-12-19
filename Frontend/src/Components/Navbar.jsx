@@ -102,7 +102,7 @@ const Navbar = () => {
               <div className="flex gap-4 items-center justify-center">
 
                 {isAdminvalue && (<button
-                  onClick={() => { window.location.href = "http://localhost:5174" }}
+                  onClick={() => { window.location.href = "https://algomox-final-svdz.vercel.app" }}
                   className="h-10 rounded-lg shadow-lg bg-blue-500 text-white py-2 px-4 hover:bg-blue-600 transition duration-300 ease-in-out transform hover:scale-105 border border-blue-700 text-md font-bold"
                 >
                   create Event
