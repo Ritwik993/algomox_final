@@ -161,7 +161,7 @@ const AddItem = ({url}) => {
           type="submit"
           className="mt-4 bg-green-500 text-white py-2 px-4 rounded-lg hover:bg-green-600 transition duration-300"
         >
-          Add Item
+          Add Event
         </button>
       </form>
     </div>
