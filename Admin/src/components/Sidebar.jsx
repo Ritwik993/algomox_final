@@ -16,7 +16,7 @@ const Sidebar = () => {
         }
       >
         <img className="h-6 mr-2" src={assets.add_icon_white} alt="Add Icon" />
-        <h2 className="text-sm sm:text-base font-medium">Add Items</h2>
+        <h2 className="text-sm sm:text-base font-medium">Add Events</h2>
       </NavLink>
       <NavLink
         to="/listItem"
@@ -29,7 +29,7 @@ const Sidebar = () => {
         }
       >
         <img className="h-6 mr-2" src={assets.add_icon_white} alt="List Icon" />
-        <h2 className="text-sm sm:text-base font-medium">List Items</h2>
+        <h2 className="text-sm sm:text-base font-medium">List Events</h2>
       </NavLink>
       <NavLink
         to="/orders"
@@ -46,7 +46,7 @@ const Sidebar = () => {
           src={assets.add_icon_white}
           alt="Orders Icon"
         />
-        <h2 className="text-sm sm:text-base font-medium">Orders</h2>
+        <h2 className="text-sm sm:text-base font-medium">Booked Events</h2>
       </NavLink>
     </div>
   );
