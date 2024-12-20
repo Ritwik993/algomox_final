@@ -64,7 +64,7 @@ const Orders = ({ url }) => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
                 <p className="text-sm">
-                  Items:{" "}
+                  Events:{" "}
                   {order.items.map((item, index) => (
                     <span key={index}>
                       {item.name} X {item.quantity}
