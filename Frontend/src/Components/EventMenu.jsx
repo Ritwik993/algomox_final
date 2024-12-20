@@ -82,7 +82,7 @@ const ItemMenu = () => {
       <h1 className="text-2xl font-bold mb-6 text-center">Events near you</h1>
 
       {/* Search Box */}
-      <div className="mb-4">
+      <div className="mb-4 flex  justify-center items-center">
         <input
           type="text"
           placeholder="Search by category"
