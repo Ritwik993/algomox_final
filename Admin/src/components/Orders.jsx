@@ -58,7 +58,7 @@ const Orders = ({ url }) => {
                 className="w-8 h-8 mr-2"
               />
               <span className="text-lg font-semibold">
-                Order ID: {order._id}
+                Event ID: {order._id}
               </span>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -80,18 +80,18 @@ const Orders = ({ url }) => {
               </div>
               <div>
                 <p className="text-sm">
-                  Status:{" "}
-                  <select
+                  Status: Success
+{/*                   <select
                     onChange={(event) => statusHandler(event, order._id)}
-                    value={order.status}
+                    value="Success"
                     className="w-full py-2 px-3 border rounded shadow-sm focus:outline-none focus:ring-2 focus:ring-gray-200"
                   >
                     <option value="Food Processing">Food Processing</option>
                     <option value="Out for Delivery">Out for Delivery</option>
                     <option value="Delivered">Delivered</option>
-                  </select>
+                  </select> */}
                 </p>
-                <p className="text-sm">Number of Items: {order.items.length}</p>
+                <p className="text-sm">Number of People: {order.items.length}</p>
                 <p className="text-sm">Total Amount: ₹{order.amount / 100}</p>
               </div>
             </div>
