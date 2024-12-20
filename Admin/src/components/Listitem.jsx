@@ -25,7 +25,7 @@ const Listitem = ({url}) => {
     try {
       const response = await axios.delete(`${url}/admin/deleteProduct/${id}`);
       if (response.data.success) {
-        toast.success("Item removed successfully");
+        toast.success("Event removed successfully");
         fetchData(); // Refresh the list after deletion
       } else {
         toast.error("Error while removing Data");
@@ -42,7 +42,7 @@ const Listitem = ({url}) => {
 
   return (
     <div className="p-4 w-full">
-      <h2 className="text-xl font-bold mb-4">List of Items</h2>
+      <h2 className="text-xl font-bold mb-4">List of Events</h2>
       {list.length > 0 ? (
         <ul className="space-y-4">
           {list.map((item) => (
@@ -90,7 +90,7 @@ const Listitem = ({url}) => {
           ))}
         </ul>
       ) : (
-        <p>No items found.</p>
+        <p>No events found.</p>
       )}
     </div>
   );
